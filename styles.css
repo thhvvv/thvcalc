@@ -1,3 +1,23 @@
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --button-bg-color: #e0e0e0;
+    --button-hover-bg-color: #d0d0d0;
+    --display-bg-color: #fff;
+    --display-text-color: #333;
+    --calculator-border-color: #ccc;
+}
+
+[data-theme="dark"] {
+    --bg-color: #333;
+    --text-color: #f0f0f0;
+    --button-bg-color: #555;
+    --button-hover-bg-color: #666;
+    --display-bg-color: #444;
+    --display-text-color: #f0f0f0;
+    --calculator-border-color: #555;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -5,27 +25,36 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 .calculator {
-    border: 1px solid #ccc;
+    border: 1px solid var(--calculator-border-color);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    background-color: var(--display-bg-color);
 }
 
 .display {
     font-size: 2rem;
     text-align: right;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--calculator-border-color);
     margin-bottom: 10px;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    background-color: var(--display-bg-color);
+    color: var(--display-text-color);
 }
 
 .buttons {
@@ -37,15 +66,16 @@ body {
 .btn {
     padding: 20px;
     font-size: 1.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--calculator-border-color);
     border-radius: 5px;
-    background-color: #e0e0e0;
+    background-color: var(--button-bg-color);
     cursor: pointer;
     transition: background-color 0.2s;
+    color: var(--text-color);
 }
 
 .btn:hover {
-    background-color: #d0d0d0;
+    background-color: var(--button-hover-bg-color);
 }
 
 .zero {
